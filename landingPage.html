@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<style>
+table, th, td {
+  border:1px solid black;
+  height: 70px;
+}
+
+h2{
+  text-align: center;
+}
+</style>
+<body>
+
+<h2>Landing page</h2>
+<button style="float: right; width: 100px;
+position: relative;
+top:-70px;
+height: 35px;
+margin-top: 20px;
+border: none;
+background-color: #0073d2;
+color: white;
+font-size: 18px;
+border-radius: 4px; "  type="logout-btn" onclick="Logout();">Logout</button>
+
+<table style="width:100%" >
+  <tr>
+    <th>Name</td>
+    <th>surname</td>
+    <th>Email</th>
+</tr>
+<tr>
+    <td id="f1"></td>
+    <td id="f2"></td>
+    <td id="f3"></td>
+</tr>
+</table>
+
+</body>
+<script >
+window.onload = function() {
+    data = JSON.parse(localStorage.getItem("session"))
+    document.getElementById('f1').innerText = data['fname'];
+    document.getElementById('f2').innerText = data['lname'];
+    document.getElementById('f3').innerText = data['email'];
+};
+
+function Logout() {
+
+localStorage.removeItem("email");
+localStorage.removeItem("password");
+
+
+window.location.href = "login.html";
+
+};
+</script>
+</html>
+

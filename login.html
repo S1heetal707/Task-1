@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Login</title>
+    <link rel="stylesheet" href="signup.css" />
+    <script type="text/javascript">
+      function preventbackbutton() { window.history.forward(); }
+      setTimeout("preventbackbutton()", 0);
+      window.onunload = function () { null };
+  </script>
+  </head>
+  <body onLoad="noBack();" onpageshow="if (event.persisted) noBack();" onUnload="">
+    <div class="login-box">
+      <h1>Login</h1>
+      <form >
+        <label>Email</label>
+        <input type="email" id="login-email" placeholder="Enter email" />
+        <label>Password</label>
+        <input type="password" id="login-pass" placeholder="Enter password" />
+        <button type="button" class="b1" onclick="return loginUser()"> Submit</button>
+        <!-- <a href="landingPage.html"><input type="button" class="b1" onclick=" return loginUser()" value="Submit"></input></a> -->
+      </form>
+    </div>
+    <p class="btn">
+      Not have account? <a href="signup.html">Sign Up Here</a>
+    </p>
+  </body>
+  <script src="login.js">
+  window.history.forward();
+    function noBack()
+    {
+        window.history.forward();
+    }
+  </script>
+</html>
